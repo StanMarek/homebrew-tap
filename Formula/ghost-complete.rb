@@ -1,15 +1,15 @@
 class GhostComplete < Formula
   desc "Terminal-native autocomplete engine using PTY proxying, built for Ghostty"
   homepage "https://github.com/StanMarek/ghost-complete"
-  version "0.2.2"
+  version "0.2.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.2.2/ghost-complete-aarch64-apple-darwin.tar.xz"
-      sha256 "f481c0c10ae91aaa4057aa024f62fcf63624b7340c0ae240ad163f24a7aca2a0"
+      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.2.3/ghost-complete-aarch64-apple-darwin.tar.xz"
+      sha256 "d30dc00a8bbbcdab4fd19b26c0266c5ae86cae909a3950c4fa29fcc379b6a56b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.2.2/ghost-complete-x86_64-apple-darwin.tar.xz"
-      sha256 "f4042a45377b4c003f0309bb21fea8024046a2ada121a1dcace5734ad6ed7967"
+      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.2.3/ghost-complete-x86_64-apple-darwin.tar.xz"
+      sha256 "4ad9a243e263ba4c67fa0e0590770983a423c9fa828577c3fdb16a8deca7b8f9"
     end
   end
   license "MIT"
