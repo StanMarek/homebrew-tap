@@ -1,15 +1,15 @@
 class GhostComplete < Formula
   desc "Terminal-native autocomplete engine using PTY proxying for macOS terminals"
   homepage "https://github.com/StanMarek/ghost-complete"
-  version "0.19.0"
+  version "0.19.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.19.0/ghost-complete-aarch64-apple-darwin.tar.xz"
-      sha256 "648e0fff35e15ba1d868025721ca89cf223a889b479e4135b77af6fba941d45a"
+      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.19.1/ghost-complete-aarch64-apple-darwin.tar.xz"
+      sha256 "d0856471f2c34f91b892edfa5ebcdfeda44cb03c9fc92efc49bb90edc197b773"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.19.0/ghost-complete-x86_64-apple-darwin.tar.xz"
-      sha256 "01ba6fa030d706b8f3ca91fea27ac133f00f1afa8bc3346d3b469413f5395f7b"
+      url "https://github.com/StanMarek/ghost-complete/releases/download/v0.19.1/ghost-complete-x86_64-apple-darwin.tar.xz"
+      sha256 "970406816e485af339fb5265c78e57d2d83d85033e4aa0fa84d868d5fa180943"
     end
   end
   license "MIT"
@@ -35,8 +35,12 @@ class GhostComplete < Formula
   end
 
   def install
-    bin.install "ghost-complete" if OS.mac? && Hardware::CPU.arm?
-    bin.install "ghost-complete" if OS.mac? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "ghost-complete"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "ghost-complete"
+    end
 
     install_binary_aliases!
 
